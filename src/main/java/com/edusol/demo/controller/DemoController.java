@@ -3,6 +3,8 @@ package com.edusol.demo.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+
 @RestController  // step 1 use this annotation on top of class
 public class DemoController {
 
@@ -28,6 +30,16 @@ public class DemoController {
     public int demo(){
 
        return 33;
+    }
+
+    @RequestMapping("/map_demo")
+    public HashMap<String,String> map(){
+
+       HashMap<String, String> map= new HashMap<>();
+       map.put("A","Java");
+       map.put("B","Spring");
+
+       return map;
     }
 
 }
