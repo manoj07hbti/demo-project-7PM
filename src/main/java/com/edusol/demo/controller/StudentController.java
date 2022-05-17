@@ -1,10 +1,7 @@
 package com.edusol.demo.controller;
 
 import com.edusol.demo.model.Student;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -16,23 +13,21 @@ public class StudentController {
 
     // CREATE
 
-    @RequestMapping("/add_student")
-    public String addStudent(){
-
-        Student student= new Student("Raj",23,"CS");
+    @RequestMapping(value = "/add_student", method =RequestMethod.POST)
+    public String addStudent(@RequestBody Student student){
         studentArrayList.add(student);
         return "Student Added Successfully ....";
     }
 
     //R-> READ OR GET
-    @RequestMapping("/get_all")
+    @RequestMapping(value = "/get_all", method = RequestMethod.GET)
     public  ArrayList <Student> getStudentArrayList(){
 
         return studentArrayList;
     }
 
     // U-> UPDATE
-    @RequestMapping("update_student")
+    @RequestMapping(value = "update_student", method = RequestMethod.PUT)
     public String updateStudent(@RequestParam String name){
 
         studentArrayList.get(0).setName(name);
@@ -41,7 +36,7 @@ public class StudentController {
     }
 
     //D-> DELETE
-    @RequestMapping("/delete_student/{index}")
+    @RequestMapping(value = "/delete_student/{index}",method = RequestMethod.DELETE)
     public String remove(@PathVariable int index){
 
         studentArrayList.remove(index);
