@@ -1,10 +1,24 @@
 package com.edusol.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="STUDENT_7PM")
 public class Student {
 
+    @Id// this will make this column as primary key
+    @GeneratedValue // Automatically increment current 1,2,3,......14,15
+    Long id;// primary key unique value
     private String name;
     private int age;
+    @Column(name="STD_SECTION")
     private String section;
+
+    // default constructor
+    public Student() {
+    }
 
     // param constructor
 
