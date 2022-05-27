@@ -1,5 +1,6 @@
-package com.edusol.demo.model;
+package com.edusol.demo.service;
 
+import com.edusol.demo.model.Student;
 import com.edusol.demo.repository.StudentJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

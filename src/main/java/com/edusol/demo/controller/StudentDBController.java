@@ -1,7 +1,7 @@
 package com.edusol.demo.controller;
 
 import com.edusol.demo.model.Student;
-import com.edusol.demo.model.StudentDBService;
+import com.edusol.demo.service.StudentDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
